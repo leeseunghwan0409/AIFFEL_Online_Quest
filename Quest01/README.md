@@ -1,20 +1,25 @@
 # AIFFEL Campus Online 7th Code Peer Review Templete
 
 - 코더 : 이승환
-- 리뷰어 : 본인의 이름을 작성하세요.
+- 리뷰어 : 이슬
 
 
 
 🔑 **PRT(Peer Review Template)**
 
-- [ ]  **1. 주어진 문제를 해결하는 완성된 코드가 제출되었나요?**
+- [x]  **1. 주어진 문제를 해결하는 완성된 코드가 제출되었나요?**
     - 문제에서 요구하는 최종 결과물이 첨부되었는지 확인
     - 문제를 해결하는 완성된 코드란 프로젝트 루브릭 3개 중 2개, 
     퀘스트 문제 요구조건 등을 지칭
         - 해당 조건을 만족하는 부분의 코드 및 결과물을 근거로 첨부
         - ![image](https://github.com/leeseunghwan0409/AIFFEL_Online_Quest/assets/149548653/0db04e50-82c1-4f5a-b609-ee258080c4d5)
+          - 단어를 입력했을 때 결과가 잘 나옵니다.
+        - ![numbertest](https://github.com/seulwithlove/seunhwan_repo/assets/140625136/32eb0c72-7486-48d4-8635-d5ee873def51)
+          - 숫자를 입력했을 때에도 결과가 잘 나옵니다.
+        - ![sentencetest](https://github.com/seulwithlove/seunhwan_repo/assets/140625136/9e635859-3f17-4f3b-abc1-51b6c7e75338)
+          - 문장을 입력했을 때에도 결과가 잘 나옵니다.
 
-    
+
 - [ ]  **2. 전체 코드에서 가장 핵심적이거나 가장 복잡하고 이해하기 어려운 부분에 작성된 
 주석 또는 doc string을 보고 해당 코드가 잘 이해되었나요?**
     - 해당 코드 블럭에 doc string/annotation이 달려 있는지 확인
@@ -36,7 +41,11 @@
         인풋이 들어가 최종적으로 아웃풋이 나오기까지의 전체 흐름을 도식화하여 
         모델 아키텍쳐에 대한 이해를 돕고 있는지 확인
 
-- [ ]  **5. 코드가 간결하고 효율적인가요?**
+- [x]  **5. 코드가 간결하고 효율적인가요?**
     - 파이썬 스타일 가이드 (PEP8) 를 준수하였는지 확인
     - 코드 중복을 최소화하고 범용적으로 사용할 수 있도록 모듈화(함수화) 했는지
         - 잘 작성되었다고 생각되는 부분을 근거로 첨부합니다.
+        - ![cleancode-1](https://github.com/seulwithlove/seunhwan_repo/assets/140625136/612c061b-4fe9-4993-bac5-cbcb4c9bcda4)
+          - 회문이기때문에 입력값의 절반만 확인하면 된다는 알고리즘이 신선하고, 코드도 간결합니다.
+        - ![cleancode-2](https://github.com/seulwithlove/seunhwan_repo/assets/140625136/3635388b-8352-48be-a52e-21469b689881)
+          - 입력받은 동시에 공백을 제거해주는 부분이 좋습니다.
