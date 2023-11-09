@@ -15,30 +15,8 @@
         - >> 함수 2개 (컴프리헨션, 제너레이터) 만들기 완료,
           >> 컴프리헨션 함수에는 이름과 속도를 조합, 제너레이터 함수에는 for문과 yield문 활용 완료,
           >> 물고기 리스트를 입력 받고, 2개의 함수가 물고기 이름과 속도를 출력함.
-₩₩₩
 
-fish_list = [{"이름": "Nemo", "speed":3},{"이름": "Dory", "speed":5},{"이름": "Sam", "speed":10}]
-
-def show_fish_movement_comprehension(fish_list):
-    # 각 물고기가 얼마나 움직이는지를 출력
-    [print(f"{fish['이름']} is swimming at {fish['speed']} m/s") for fish in fish_list]
-
-def show_fish_movement_generator(fish_list):
-    # 각 물고기가 얼마나 움직이는지를 출력하는 제너레이터
-    def fish_movement(fish_list):
-        for fish in fish_list:
-            yield f"{fish['이름']} is swimming at {fish['speed']} m/s"
-
-    # 제너레이터를 사용하여 출력
-    for movement in fish_movement(fish_list):
-        print(movement)
-
-print("Using Comprehension:")
-show_fish_movement_comprehension(fish_list)
-
-print("Using Generator:")
-show_fish_movement_generator(fish_list)
-₩₩₩
+![image](https://github.com/claireyy01/AIFFEL_Quest_seunghwan/assets/145723730/aa450f9f-9c43-400d-ae07-44101af3f81a)
 
     
 - [ ]  **2. 전체 코드에서 가장 핵심적이거나 가장 복잡하고 이해하기 어려운 부분에 작성된 
