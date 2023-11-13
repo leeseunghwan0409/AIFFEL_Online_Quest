@@ -1,4 +1,4 @@
-![image](https://github.com/K-Bbang/-_Online_Quest/assets/149548972/aaf7adb2-c886-4ea7-8b03-7c80e27abcfa)# AIFFEL Campus Online Code Peer Review Templete
+# AIFFEL Campus Online Code Peer Review Templete
 - 코더 : 이승환
 - 리뷰어 : 이상원
 
