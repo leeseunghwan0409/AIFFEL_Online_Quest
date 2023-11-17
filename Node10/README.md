@@ -1,4 +1,3 @@
-## LMS Node 10. 프로젝트 - 사각형 만들기 / Kiosk만들기
 ## 1. 사각형 넓이 구하기
 
 ### 설계하면서 만들기
@@ -458,5 +457,259 @@
 #### 🔶 지불
 -  주문이 완료 되었으니 지불을 해야한다. 지불 할 메서드를 만들어 보자.
 	```python
+	menu = ['아메리카노', '라떼', '모카', '유자차', '녹차', '초코라떼']  
+	price = [2000, 3000, 3000, 2500, 2500, 3000]  
+	  
+	  
+	class Kiosk:  
+	    def __init__(self):  
+	        self.menu = menu  
+	        self.price = price  
+	  
+	    def menu_print(self):  
+	        for i in range(len(menu)):  
+	            print(i+1, self.menu[i], ":", self.price[i], '원')  
+	  
+	    def menu_select(self):  
+	        self.order_menu = []  
+	        self.order_price = []  
+	  
+	        n = 0  
+	        while n < 1 or len(menu) < n:  
+	            n = int(input("음료의 번호를 입력하세요: "))  
+	            if 1 <= n & n <= len(menu):  
+	                self.order_price.append(self.price[n-1])  
+	                self.price_sum = self.price[n-1]  
+	                print(self.menu[n-1], ":", self.price[n-1], '원')  
+	            else:  
+	                print("없는 메뉴입니다. 번호를 다시 입력해주세요.")  
+	        t = 0  
+	        while t != 1 and t != 2:  
+	            t = int(input("HOT 음료는 1을, ICE음료는 2를 입력하세요 : "))  
+	            if t == 1:  
+	                self.temp = "HOT"  
+	            elif t == 2:  
+	                self.temp = "ICE"  
+	            else:  
+	                print("1과 2 중 하나를 입력해주세요.")  
+	        self.order_menu.append((self.temp + " " + self.menu[n-1]))  
+	        print(f"주문 음료 {self.temp} {self.menu[n-1]} : {self.price[n-1]}원 ")  
+	  
+	        while n != 0:  
+	            print()  
+	            n = int(input("추가 주문은 음료 번호를, 지불은 0을 누르세요 : "))  
+	            if 0 < n and n < len(menu) + 1:  
+	                t = 0  
+	                while t != 1 and t != 2:  
+	                    t = int(input("HOT 음료는 1을, ICE음료는 2를 입력하세요 : "))  
+	                    if t == 1:  
+	                        self.temp = "HOT"  
+	                    elif t == 2:  
+	                        self.temp = "ICE"  
+	                    else:  
+	                        print("1과 2 중 하나를 입력해주세요.")  
+	                self.order_menu.append(self.temp + " " + self.menu[n-1])  
+	                self.order_price.append(self.price[n-1])  
+	                self.price_sum += self.price[n-1]  
+	                print("추가 주문 음료는", self.temp, self.menu[n-1], ":", self.price[n-1], "원\n", "합계 : ", self.price_sum,  
+	                      "원")  
+	            else:  
+	                if n == 0:  
+	                    print("주문이 완료되었습니다.")  
+	                    print(self.order_menu, self.order_price)  
+	                else:  
+	                    print("없는 메뉴입니다. 다시 주문해 주세요.")
+	                    
+	    def pay(self): # 지불 메서드
+		    p = 0
+		    while p not in ["1", "2", "cash", "card"] # 해당 단어가 없다면 반복
+		    p = input('현금(\'cash\' or 1), 카드(\'card\' or 2) : ')
+		    if p == "1" or "cash":
+			    print('직원을 호출하겠습니다.')
+			    break # input함수에서 해당 단어를 받았을 때 반복문 탈출
+			elif p == "2" or "card"
+				print("IC칩을 방향에 맞게 카드를 꽂아주세요.")
+				break # input함수에서 해당 단어를 받았을 때 반복문 탈출
+			else:
+				print("다시 결제를 시도해주세요.\n")
 	
+	a = Kiosk()
+	a.menu_print()
+	>>> 1 아메리카노 : 2000원
+	>>> 2 라떼 : 3000원
+	>>> 3 모카 : 3000원
+	>>> 4 유자차 : 2500원
+	>>> 5 녹차 : 2500원
+	>>> 6 초코라떼 : 3000원
+	
+	a.menu_select()
+	>>> "음료 번호를 입력하세요" : 1
+	>>> "HOT 음료는 1을, ICE음료는 2를 입력하세요" : 2
+	>>> "음료 번호를 입력하세요" : 1
+	>>> "HOT 음료는 1을, ICE음료는 2를 입력하세요" : 2
+	>>> "음료 번호를 입력하세요" : 1
+	>>> "HOT 음료는 1을, ICE음료는 2를 입력하세요" : 2
+	>>> "음료 번호를 입력하세요" : 6
+	>>> "HOT 음료는 1을, ICE음료는 2를 입력하세요" : 2
+	>>> "음료 번호를 입력하세요" : 6
+	>>> "HOT 음료는 1을, ICE음료는 2를 입력하세요" : 2
+	>>> 주문이 완료되었습니다.
+		['ICE americano', 'ICE americano', 'ICE americano', 'ICE choco_latte', 
+		'ICE choco_latte'] [2000, 2000, 2000, 3000, 3000]
+	>>> 현금('cash' or 1), 카드('card' or 2) :  1
+	>>> 직원을 호출하겠습니다.
 	```
+-  실행 시 문제 없이 출력되는 결과를 볼 수 있다.
+
+#### 🔶 주문표
+-  주문표에는 주문한 전체 상풍명과 각 금액과 총 주문 금액을 출력해야한다.
+	`table`메서드에 위 내용을 담아 코드로 작성해 보자.
+	```python
+	menu = ['아메리카노', '라떼', '모카', '유자차', '녹차', '초코라떼']  
+	price = [2000, 3000, 3000, 2500, 2500, 3000]  
+	  
+	  
+	class Kiosk:  
+	    def __init__(self):  
+	        self.menu = menu  
+	        self.price = price  
+	  
+	    def menu_print(self):  
+	        for i in range(len(menu)):  
+	            print(i+1, self.menu[i], ":", self.price[i], '원')  
+	  
+	    def menu_select(self):  
+	        self.order_menu = []  
+	        self.order_price = []  
+	  
+	        n = 0  
+	        while n < 1 or len(menu) < n:  
+	            n = int(input("음료의 번호를 입력하세요: "))  
+	            if 1 <= n & n <= len(menu):  
+	                self.order_price.append(self.price[n-1])  
+	                self.price_sum = self.price[n-1]  
+	                print(self.menu[n-1], ":", self.price[n-1], '원')  
+	            else:  
+	                print("없는 메뉴입니다. 번호를 다시 입력해주세요.")  
+	        t = 0  
+	        while t != 1 and t != 2:  
+	            t = int(input("HOT 음료는 1을, ICE음료는 2를 입력하세요 : "))  
+	            if t == 1:  
+	                self.temp = "HOT"  
+	            elif t == 2:  
+	                self.temp = "ICE"  
+	            else:  
+	                print("1과 2 중 하나를 입력해주세요.")  
+	        self.order_menu.append((self.temp + " " + self.menu[n-1]))  
+	        print(f"주문 음료 {self.temp} {self.menu[n-1]} : {self.price[n-1]}원 ")  
+	  
+	        while n != 0:  
+	            print()  
+	            n = int(input("추가 주문은 음료 번호를, 지불은 0을 누르세요 : "))  
+	            if 0 < n and n < len(menu) + 1:  
+	                t = 0  
+	                while t != 1 and t != 2:  
+	                    t = int(input("HOT 음료는 1을, ICE음료는 2를 입력하세요 : "))  
+	                    if t == 1:  
+	                        self.temp = "HOT"  
+	                    elif t == 2:  
+	                        self.temp = "ICE"  
+	                    else:  
+	                        print("1과 2 중 하나를 입력해주세요.")  
+	                self.order_menu.append(self.temp + " " + self.menu[n-1])  
+	                self.order_price.append(self.price[n-1])  
+	                self.price_sum += self.price[n-1]  
+	                print("추가 주문 음료는", self.temp, self.menu[n-1], ":", self.price[n-1], "원\n", "합계 : ", self.price_sum,  
+	                      "원")  
+	            else:  
+	                if n == 0:  
+	                    print("주문이 완료되었습니다.")  
+	                    print(self.order_menu, self.order_price)  
+	                else:  
+	                    print("없는 메뉴입니다. 다시 주문해 주세요.")
+	                    
+	    def pay(self):
+		    p = 0
+		    while p not in ["1", "2", "cash", "card"]
+		    p = input('현금(\'cash\' or 1), 카드(\'card\' or 2) : ')
+		    if p == "1" or "cash":
+			    print('직원을 호출하겠습니다.')
+			    break
+			elif p == "2" or "card"
+				print("IC칩을 방향에 맞게 카드를 꽂아주세요.")
+				break
+			else:
+				print("다시 결제를 시도해주세요.\n")
+		
+		# 주문서 출력
+		def talbe(self):
+			# 상단 외곽
+			print('⟝' + '-' * 30 + '⟞') 
+			for i in range(5):
+				print('|' + ' ' * 31 + '|')
+			# 주문 상품명 : 해당 금액	
+			for i in range(len(self.order_menu)):
+				print(self.order_menu[i], ' : ', self.order_price[i])
+			
+			print('합계 금액 :', self.price_sum)
+			# 하단 외
+			for i in range(5):
+				print('|' + ' ' * 31+ '|')
+			print('⟝' + '-' * 30 + '⟞')
+	a = Kiosk()
+	a.menu_print()
+	>>> 1 아메리카노 : 2000원
+	>>> 2 라떼 : 3000원
+	>>> 3 모카 : 3000원
+	>>> 4 유자차 : 2500원
+	>>> 5 녹차 : 2500원
+	>>> 6 초코라떼 : 3000원
+	
+	a.menu_select()
+	>>> "음료 번호를 입력하세요" : 1
+	>>> "HOT 음료는 1을, ICE음료는 2를 입력하세요" : 2
+	>>> "음료 번호를 입력하세요" : 1
+	>>> "HOT 음료는 1을, ICE음료는 2를 입력하세요" : 2
+	>>> "음료 번호를 입력하세요" : 1
+	>>> "HOT 음료는 1을, ICE음료는 2를 입력하세요" : 2
+	>>> "음료 번호를 입력하세요" : 6
+	>>> "HOT 음료는 1을, ICE음료는 2를 입력하세요" : 2
+	>>> "음료 번호를 입력하세요" : 6
+	>>> "HOT 음료는 1을, ICE음료는 2를 입력하세요" : 2
+	>>> 주문이 완료되었습니다.
+		['ICE americano', 'ICE americano', 'ICE americano', 'ICE choco_latte', 
+		'ICE choco_latte'] [2000, 2000, 2000, 3000, 3000]
+	>>> 현금('cash' or 1), 카드('card' or 2) :  1
+	>>> 직원을 호출하겠습니다.
+	>>> ⟝******************************⟞
+	>>> |                               |
+	>>> |                               |
+	>>> |                               |
+	>>> |                               |
+	>>> |                               |
+	>>> ICE 아메리카노 : 2000
+	>>> ICE 아메리카노 : 2000
+	>>> ICE 아메리카노 : 2000
+	>>> ICE 초코라떼 : 3000
+	>>> ICE 초코라떼 : 3000
+	>>> 합계 금액 :  12000
+	>>> |                               |
+	>>> |                               |
+	>>> |                               |
+	>>> |                               |
+	>>> |                               |
+	>>> ⟝******************************⟞
+	```
+-  실행 시 문제 없이 출력되는 결과를 볼 수 있다.
+
+---
+
+- 회고
+	- 파이썬자란다 챕터를 끝내면서 많이 부족하다는 걸 느꼈다. 파이썬을 꾸준히 공부해서 여러 문제에도 응용할 수 있겠끔 해야겠다.
+- KPT
+	- K
+		1. 배운내용을 최대한 활용하여 코드 작성을 하였다.
+	- P
+ 		1. 응용하는 부분에 대해서 아직 어려움이 많이 남아있다.
+	- T
+   		1. 강의시간 이후에 파이썬 연습을 계속 병행하며 진도를 나가야겠다.
