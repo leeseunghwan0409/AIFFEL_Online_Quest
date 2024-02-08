@@ -106,3 +106,12 @@ class SecondScreen extends StatelessWidget {
     );
   }
 }
+
+// 회고
+// 이승환
+// K
+  // 퀘스트에 맞게 작업을 진행하였다.
+// P
+  // Debug console에 나타나지 않았다.
+// T
+  // 퇴실 이 후에 책을 참고하여 다시 작업을 해봐야겠다.
