@@ -1,5 +1,5 @@
 # AIFFEL Campus Online Code Peer Review Templete
-- 코더 : 이승환
+- 코더 : 이승환, 조수민
 - 리뷰어 : 최강훈
 ![image](https://github.com/choikanghoon/leeseunghwan0409-AIFFEL_Online_Quest/assets/149554171/465fa02c-5af3-4f90-984c-35e81e5bfe84)
 ![image](https://github.com/choikanghoon/leeseunghwan0409-AIFFEL_Online_Quest/assets/149554171/04cfc7bf-a30b-410f-b0df-7821c5b93332)
