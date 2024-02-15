@@ -1,6 +1,7 @@
 # AIFFEL Campus Online Code Peer Review Templete
-- 코더 : 코더의 이름을 작성하세요.
-- 리뷰어 : 리뷰어의 이름을 작성하세요.
+- 코더 : 이승환, 홍채림
+- 리뷰어 : 조수민
+  ![jellyfish_Classifier_pic](https://github.com/leeseunghwan0409/AIFFEL_Online_Quest/assets/149548653/820ce1b8-b2eb-45e4-8f29-c8ed27fb219a)
 
 
 # PRT(Peer Review Template)
