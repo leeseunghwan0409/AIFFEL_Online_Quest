@@ -5,6 +5,7 @@
 그러므로 다양한 쓰레기들도 덩달아 늘어나게 되었다.
 제대로 된 분리수거가 되질 않아 환경이 망가지게 되어 쓰레기 분류를 하여 좀 더 나은 분리수거를 할 수 있게 하려고 이번 프로젝트 앱을 구상하게 되었다.
 
+![image](https://github.com/leeseunghwan0409/AIFFEL_Online_Quest/assets/149548653/872d7292-42e6-4758-af55-d1b76bea2db5)
 [앱 프로젝트 스케치파일.pdf](https://github.com/leeseunghwan0409/AIFFEL_Online_Quest/files/14304685/default.pdf)
 
 
