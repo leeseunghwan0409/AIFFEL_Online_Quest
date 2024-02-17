@@ -11,7 +11,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String result = "";
   TextEditingController urlController = TextEditingController();
 
-  Future<void> prediction_label(String url) async {
+  Future<void> prediction(String url) async {
     try {
       final response = await http.get(
         Uri.parse(urlController.text + url),
@@ -24,35 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
         final data = jsonDecode(response.body);
         setState(() {
           result =
-          "predicted_label: ${data['predicted_label']}";
-        });
-        print(result);
-      } else {
-        setState(() {
-          result = "Failed to fetch data. Status Code: ${response.statusCode}";
-        });
-      }
-    } catch (e) {
-      setState(() {
-        result = "Error: $e";
-      });
-    }
-  }
-
-  Future<void> prediction_score(String url) async {
-    try {
-      final response = await http.get(
-        Uri.parse(urlController.text + url),
-        headers: {
-          'Content-Type': 'application/json',
-          'ngrok-skip-browser-warning': '69420',
-        },
-      );
-      if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        setState(() {
-          result =
-          "prediction_score: ${data['prediction_score']}";
+          "predicted_label: ${data['predicted_label']}\nprediction_score: ${data['prediction_score']}";
         });
         print(result);
       } else {
@@ -108,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text("Home"),
                 ),
                 FloatingActionButton(
-                  onPressed: () => prediction_score('https://f1a7-35-197-41-111.ngrok-free.app/sample'), // 예측 확률을 가져오는 URL
+                  onPressed: () => prediction('https://16b1-34-145-103-97.ngrok-free.app/sample'), // 예측 확률을 가져오는 URL
                   child: Icon(Icons.send),
                 ),
               ],
