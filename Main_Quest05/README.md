@@ -25,4 +25,4 @@ Page 3. 이미지 분류 후 결과 값 도출하기
 
 ## 작업 완료 후 내용
 
-![Uploading Main_Quest05_pic.png…]()
+![Main_Quest05_pic](https://github.com/leeseunghwan0409/AIFFEL_Online_Quest/assets/149548653/285f48a4-5795-4adc-b981-54cfb2f11b1c)
